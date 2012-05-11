@@ -1,14 +1,6 @@
 #changelog#
 
 
-##1.1##
-改进了首页的列表形式，新增了blog的page Template
-首页只显示一篇文章，紧随其后的是文章列表和不同方式的索引列表
-
-封存。(Named Simpleway legacy)
-
--------Now are simpleway ~moe~
-
 ##1.0 (2011.6.4)##
 上线。
 
