@@ -38,7 +38,7 @@ get_header(); ?>
 <?php endwhile; ?>
 
 			</div><!-- #content -->
-		</div><!-- #container -->
 
 <?php get_sidebar(); ?>
+		</div><!-- #container -->
 <?php get_footer(); ?>

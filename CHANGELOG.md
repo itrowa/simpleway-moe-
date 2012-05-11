@@ -1,4 +1,7 @@
-1.1
+#changelog#
+
+
+##1.1##
 改进了首页的列表形式，新增了blog的page Template
 首页只显示一篇文章，紧随其后的是文章列表和不同方式的索引列表
 
@@ -6,19 +9,19 @@
 
 -------Now are simpleway ~moe~
 
-1.0 (2011.6.4)
+##1.0 (2011.6.4)##
 上线。
 
-1.1 (2011.6.5)
+##1.1 (2011.6.5)##
 修正了当侧边栏高度大于主栏时，下方显示“空白”的bug，引入双列自适应布局（灵感见http://matthewjamestaylor.com/blog/equal-height-columns-cross-browser-css-no-hacks
 (Equal Height Columns with Cross-Browser CSS)）
 
 修正了在index翻页时，背景图消失、侧边栏又出现的bug，现在is_date()的archive页面也能够看见萌萌的背景图了
 
-1.11 (2011.6.6)
+##1.11 (2011.6.6)##
 完善了header.php中HTML标题的显示，更美观更ACG！
 
-1.12 (2011.6.6)
+##1.12 (2011.6.6)##
 完善了评论表单部分
 完善了blockquote视觉效果
 完善了文章主体中翻页的效果

@@ -51,11 +51,14 @@ get_header(); ?>
 	 * If you want to overload this in a child theme then include a file
 	 * called loop-archives.php and that will be used instead.
 	 */
-	 get_template_part( 'loop', 'archive' );
+	 get_template_part( 'loop', 'calview' );
 ?>
 
 			</div><!-- #content -->
-		</div><!-- #container -->
 
-<?php get_sidebar(); ?>
+<?php if ( !is_date() )
+	get_sidebar(); 
+?>
+		</div><!-- #container -->
+		
 <?php get_footer(); ?>

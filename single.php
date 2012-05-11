@@ -64,7 +64,8 @@ get_header(); ?>
 <?php endwhile; // end of the loop. ?>
 
 			</div><!-- #content -->
-		</div><!-- #container -->
 
 <?php get_sidebar(); ?>
+		</div><!-- #container -->
+		
 <?php get_footer(); ?>

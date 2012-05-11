@@ -1,10 +1,10 @@
 /*
-Theme Name: Simple Way
-Theme URI: http://Trowa.org/
-Description: 在暴走模式下撰写的主题，它需要变得更强...基于Twentyten
-Author: Crying Trowa
-Version: 1.1
-Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style
+Theme Name: Simple Way ~萌え~
+Theme URI: http://dynamii.tk/
+Description: 仅保留相当少的信息在页面上，这是个适合个人用户写日记的主题。
+Author: Trowa Barton
+Version: 1.12
+Tags: grey, white, two-columns, fixed-width, fluid-layout, threaded-comments, sticky-post, microformats, rtl-language-support, editor-style
 */
 
 
@@ -59,26 +59,38 @@ a img {
 -------------------------------------------------------------- */
 
 /*
-LAYOUT: Two columns
-DESCRIPTION: Two-column fixed layout with one sidebar right of content
+LAYOUT: 双列simplyway 自适应高度流式布局
+DESCRIPTION: 主列和sidebar固定宽度，整个页面宽度为100%, 两栏高度相等
+			核心思想是创建一个div包裹两栏 这样高度肯定能等于较高的那个
 */
 
 #container {
 	float: left;
-	margin: 0 -240px 0 0;
-	width: 100%;
+	margin: 0 0 0 0;
+	width: 920px;
+	position: relative;
+	right: 260px;
 }
 #content {
-	margin: 0 300px 0 20px;
+	float: left;
+	margin: 0 0 0 0;
+	width: 620px;
+	position: relative;
+	left: 260px;
 }
 #primary,
 #secondary {
-	float: right;
+	float: left;
 	overflow: hidden;
 	width: 220px;
+	padding-top: 20px;
+	margin-left: 20px;
+	position: relative;
+	left: 260px;
 }
 #secondary {
 	clear: right;
+
 }
 #footer {
 	clear: both;
@@ -112,8 +124,15 @@ body,
 input,
 textarea,
 .page-title span,
+.comment-meta,
+.comment-body tr th,
+.comment-body thead th,
+.entry-content label,
+.entry-content tr th,
+.entry-content thead th,
+#respond label,
 .pingback a.url {
-	font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Geneva, Verdana, sans-serif;
 }
 h3#comments-title,
 h3#reply-title,
@@ -124,16 +143,10 @@ h3#reply-title,
 #site-info,
 #site-title,
 #wp-calendar,
-.comment-meta,
-.comment-body tr th,
-.comment-body thead th,
-.entry-content label,
-.entry-content tr th,
-.entry-content thead th,
+
 .entry-meta,
-.entry-title,
+
 .entry-utility,
-#respond label,
 .navigation,
 .page-title,
 .pingback p,
@@ -141,7 +154,7 @@ h3#reply-title,
 .widget-title,
 .wp-caption-text,
 select,
-input[type=submit] {
+{
 	font-family: Georgia, "Times New Roman", Helvetica, "Nimbus Sans L", sans-serif;
 }
 pre {
@@ -151,8 +164,11 @@ code {
 	font-family: "Courier New", "Ludica Console", "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
+.entry-meta, 
+input[type=submit] {
+	font-family: Verdana, sans-serif;
+}
 th,
-.entry-meta,
 .entry-utility,
 .comment-form-comment,
 .form-allowed-tags,
@@ -160,7 +176,10 @@ th,
 .widget-area ul {
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Verdana", sans-serif;
 }
-
+p#copyright-info,
+#site-generator {
+	font-family: Corbel, Verdana, Arial, Helvetica, sans-serif;
+}
 /* =Structure
 -------------------------------------------------------------- */
 
@@ -168,18 +187,26 @@ th,
 #access .menu-header,
 div.menu,
 #colophon,
-#branding,
 #main,
 #wrapper {
-	margin: 0 auto;
-	width: 940px;
+	margin: 0 auto 0 0;
+	width: 100%;
+}
+#branding {
+	width: 60px;
+	height: 38px;
+	float: left;
 }
 #wrapper {
-	background: #fff;
+	background: transparent; /*#FAFAFA */
 	padding: 0 0;
 }
+#masthead {
+	height: 38px;
+	width: 100%;
+}
 #post-extend,
-#post-navigation {
+#post-extend-secondary {
 	float: left;
 	width: 50%;
 	margin-bottom: 30px;
@@ -202,8 +229,6 @@ div.menu,
 }
 #site-info {
 	float: left;
-	font-size: 14px;
-	font-weight: bold;
 	width: 700px;
 }
 #site-generator {
@@ -217,7 +242,7 @@ div.menu,
 
 /* Main global 'theme' and typographic styles */
 body {
-	background: #FFF;
+	background: #FAFAFA;
 }
 body,
 input,
@@ -286,8 +311,9 @@ ins {
 	text-decoration: none;
 }
 blockquote {
-	font-style: italic;
 	padding: 0 3em;
+    background: url(images/blockquote.png) no-repeat left top;
+	
 }
 blockquote cite,
 blockquote em,
@@ -321,7 +347,7 @@ sub {
 }
 input[type="text"],
 textarea {
-	background: #f9f9f9;
+	background: #FFF;
 	border: 1px solid #ccc;
 	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
 	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
@@ -329,10 +355,10 @@ textarea {
 	padding: 2px;
 }
 a:link {
-	color: #C1760B;
+	color: #1571a6;
 }
 a:visited {
-	color: #C1760B;
+	color: #1571a6;
 }
 a:active,
 a:hover {
@@ -345,7 +371,36 @@ a:hover {
 	left: -9000px;
 }
 
+/* =Misc
+-------------------------------------------------------------- */
+div.clear {
+	clear: both;
+}
 
+/*
+以下是具体定制部分-------------------------------------------  */
+
+
+/* =@home 以及calendar flow
+ * 首页和其它页面在背景上稍有区别
+-------------------------------------------------------------- */
+body.home, 
+body.date {
+	background: transparent url(images/mainbg.png);
+}
+body.home #masthead,
+body.date #masthead {
+	opacity: 0.9;
+}
+body.home #container,
+body.date #container {
+	background: transparent; /* #F5F5F5 */
+}
+
+body.home #main, 
+body.date #main {
+	background: transparent;
+}
 /* =Header
 -------------------------------------------------------------- */
 
@@ -356,17 +411,18 @@ a:hover {
 	float: left;
 	font-size: 30px;
 	line-height: 36px;
-	margin: 0 0 10px 0;
-	width: 700px;
+	width: 60px;
 }
 #site-title a {
 	display: block;
-	background: url(images/logo.png) no-repeat 15px 10px;
+	background: url(images/logo.png) no-repeat 15px 8px;
 	text-indent: -9999px;
-	height: 44px;			/* @note why 44px?? */
 	color: #000;
 	font-weight: bold;
 	text-decoration: none;
+}
+#site-title a:hover {
+	background: url(images/logo.png) no-repeat 15px -49px;
 }
 #site-description {
 	clear: right;
@@ -387,15 +443,21 @@ a:hover {
 
 /* =Menu
 -------------------------------------------------------------- */
-
-#access {
+#masthead {
 	background: #FFF;
-/*	border-top: 1px solid #DDD; */
 	border-bottom: 1px solid #DDD;
+}
+#branding {
+
+
+}
+#access {
+
+
 	display: block;
 	float: left;
-	margin: 0 auto;
-	width: 940px;
+	margin: 0 0 0 0px;
+	width: 800px;
 	font-weight: bold;
 }
 #access .menu-header,
@@ -451,7 +513,7 @@ div.menu li {
 }
 #access li:hover > a,
 #access ul ul :hover > a {
-	background: #333;
+	background: #555;
 	color: #fff;
 }
 #access ul li:hover > ul {
@@ -480,21 +542,29 @@ div.menu li {
 
 /* =Content
 -------------------------------------------------------------- */
-
+#container {
+	background: #FAFAFA;
+	border-right: 1px solid #DADADA;
+}
 #main {
 	clear: both;
 	overflow: hidden;
-	padding: 40px 0 0 0;
+	background: #F5F5F5;
 }
 #content {
-	margin-bottom: 36px;
+	margin-bottom: 0;
+	padding: 15px 20px 30px 20px;
+	background: #FAFAFA;
 }
 #content,
 #content input,
 #content textarea {
 	color: #333;
-	font-size: 14px;    /* @important*/
+	font-size: 14px;    /* @important, 文章主体部分*/
 	line-height: 22px;
+}
+#content input[type="submit"] {
+	font-size: 12px;
 }
 #content p,
 #content ul,
@@ -533,6 +603,12 @@ div.menu li {
 	color: #000;
 	line-height: 1.5em;
 	margin: 0 0 20px 0;
+}
+#content a {
+	text-decoration: none;
+}
+#content .entry-content h2 {		/* 加入.entry-content是为了避免让文章标题也套用此样式*/
+	border-bottom: 1px solid #ccc;
 }
 #content table {
 	border: 1px solid #e7e7e7;
@@ -575,10 +651,15 @@ div.menu li {
 	margin: 0 0 36px 0;
 }
 .page-title span {
-	color: #333;
-	font-size: 16px;
-	font-style: italic;
-	font-weight: normal;
+	color: #3198c8;
+	font-weight: bold;
+}
+.page-title span a:link,
+.page-title span a:visited {
+	color: #3198c8;
+}
+.page-title span a:hover {
+	color: #ff4b33;
 }
 .page-title a:link,
 .page-title a:visited {
@@ -607,7 +688,7 @@ div.menu li {
 }
 .entry-meta {
 	color: #888;
-	font-size: 12px;
+	font-size: 11px;
 }
 .entry-meta abbr,
 .entry-utility abbr {
@@ -674,20 +755,24 @@ div.menu li {
 	margin: 0 0 22px 0;
 	word-spacing: 0.5em;
 }
-.page-link a:link,
+.page-link a:link,                     /* 正文部分的翻页部分*/
 .page-link a:visited {
-	background: #f1f1f1;
-	color: #333;
-	font-weight: normal;
+	color: #0066CC;
 	padding: 0.5em 0.75em;
 	text-decoration: none;
+    background-color: #EBF2FF;
+    border: 1px solid #CCDEFF;
+	text-shadow: 0 1px 0 #FFF;
 }
 .home .sticky .page-link a {
 	background: #d9e8f7;
 }
 .page-link a:active,
 .page-link a:hover {
-	color: #ff4b33;
+	color: #FFF;
+	background: #0066CC;
+	border-color: #0066CC;
+	text-shadow: none;
 }
 body.page .edit-link {
 	clear: both;
@@ -745,6 +830,31 @@ body.page .edit-link {
 
 /* =Content(@FrontPage)
 -------------------------------------------------------------- */
+#content table#wp-calendar {
+	border-collapse: separate;
+	border-width: 1px;
+	border-style: solid;
+	-moz-box-shadow: 0px 1px 2px #DDD;
+	-webkit-box-shadow: 1px 1px 4px #DDD;	
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	padding: 10px;
+	background: #FFF;
+}
+#content table#wp-calendar td a {
+	font-family:  Helvetica,"Lucida Grande","Lucida Sans Unicode",sans-serif;
+	display: block;
+	font-weight: bold;
+	text-decoration: none;
+	color: #555;
+}
+#content table#wp-calendar tfoot {
+	font-size: 12px;
+}
+#content table#wp-calendar tfoot td {
+	padding: 2px 10px 2px 4px;
+}
 .meta-words,						/* 特点: 灰色字体, 做辅助说明用. */
 .meta-words a{  					/* @notes: 如果使用meta-words的内容多了,可以把它放到global区 */
 	color: #888;
@@ -753,7 +863,11 @@ body.page .edit-link {
 .meta-words a {
 	text-decoration: none;
 }
-#post-extend h3, 
+
+#post-navigation {
+	font-size: 13px;
+}
+
 #post-navigation h3{
 	margin-top: 20px;
 	margin-bottom: 10px;
@@ -762,14 +876,25 @@ body.page .edit-link {
 #post-extend .go-more {			/* @note: 可以建立一个meta-words的类来包括它们, 这类样式的特征是灰色字体而且较小 */
 	margin-left: 20px;
 	list-style-type: none;
-	font-size: 10px;
-	letter-spacing: 2px;
+	font-size: 11px;
 	color: #888;
 }
 
 #post-extend .go-more a{			
 	text-decoration: none;
 	color: #888;
+}
+
+/* =Title @home @Archive @date @search (body class是 archive 等的部分)
+-------------------------------------------------------------- */
+body.archive #content h1.page-title,
+body.search #content h1.page-title {
+	font-size: 12px;	
+	font-weight: normal;
+	background-color: #F2F7FC;
+	color:  #AAA;/*#0066CC; */
+	border: 1px solid #CCDEFF;
+	padding: 10px;
 }
 
 /* =Asides
@@ -828,14 +953,12 @@ body.page .edit-link {
 	margin: 0;
 	height: auto;
 	max-width: 600px;
-	padding: 5px;
+	background-color: #FFF;
+	padding: 4px;
 	border-style: solid;
-	border-color: #BBB;
-	border-top-width: 1px;
-	border-left-width: 1px;
-	border-bottom-width: 2px;
-	border-right-width: 2px;
-	width: auto;
+	border-color: #DDD;
+	border-width: 1px;
+/*	width: auto; */
 }
 #content .attachment img {
 	max-width: 900px;
@@ -929,7 +1052,7 @@ body.page .edit-link {
 .navigation a:visited {
 	color: #888;
 	text-decoration: none;
-	font-size: 10px;
+	font-size: 11px;
 	letter-spacing: 2px;
 }
 .navigation a:active,
@@ -998,7 +1121,10 @@ h3#comments-title {
 	border-width: 1px;
 	border-color: #DDD;
 }
-
+#comments input,
+#comments textarea {
+	font-size: 12px;
+}
 #comments .comment-body ul,
 #comments .comment-body ol {
 	margin-bottom: 18px;
@@ -1094,12 +1220,20 @@ input[type=submit] {
 }
 #respond {
 	border-top: 1px solid #e7e7e7;
-	margin: 24px 0;
+	margin: 24px 0 0;
 	overflow: hidden;
 	position: relative;
 }
 #respond p {
 	margin: 0;
+}
+#respond p.comment-form-author,
+#respond p.comment-form-url,
+#respond p.comment-form-email {
+	line-height: 36px;
+}
+#respond p.comment-form-comment {
+	margin-top: 10px;
 }
 #respond .comment-notes {
 	margin-bottom: 1em;
@@ -1124,17 +1258,58 @@ h3#reply-title {
 	font-weight: normal;
 	line-height: 18px;
 }
+#respond {
+	font-size: 12px;
+}
+
 #respond .required {
 	color: #ff4b33;
 	font-weight: bold;
 }
 #respond label {
-	color: #888;
+	color: #555;
+	font-weight: bold;
 	font-size: 13px;
 }
 #respond input {
-	margin: 0 0 9px;
-	width: 98%;
+}
+#respond input#author,
+#respond input#email, 
+#respond input#url {
+	margin: 4px 355px 4px 5px;
+	float: right;
+	padding-left: 18px;
+	width: 180px;
+}
+#respond input#author {
+	background: #FFF url(images/person.gif) no-repeat 4px center;
+}
+#respond input#email {
+	background: #FFF url(images/mail.gif) no-repeat 4px center;
+}
+#respond input#url {
+	background: #FFF url(images/globe.gif) no-repeat 4px center;
+}
+#respond input#submit {
+	float: none;
+	background: -webkit-gradient(linear, left top, left bottom, from(#2868EA), to(#0F4487));
+	background: -moz-linear-gradient(top,  #2868EA,  #0F4487);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');	
+    border: 1px solid #5F6F9C;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 2px #BBBBBB;
+    color: #FFFFFF;
+    font-family: Verdana,Sans-Serif;
+    font-size: 11px;
+    font-weight: normal;
+    height: 28px;
+    margin-top: 2px;
+    padding: 0 5px;
+    text-shadow: 0 -1px 1px #222222;
+}
+#respond input#submit:active{
+	position: relative;
+	top: 1px;
 }
 #respond textarea {
 	width: 98%;
@@ -1262,24 +1437,31 @@ h3#reply-title {
 -------------------------------------------------------------- */
 
 #footer {
-	margin-bottom: 20px;
+	background: transparent url(images/bg.png);
+	border-top: 1px solid #CDCDCD;
+	padding-bottom: 30px;
+	font-size: 12px;
 }
 #colophon {
-	border-top: 4px solid #000;
-	margin-top: -4px;
+/*	border-top: 4px solid #000; */
+	margin-top: 0;
 	overflow: hidden;
-	padding: 18px 0;
+	padding: 0;
 }
 #site-info {
-	font-weight: bold;
+	/*font-weight: bold; */
 }
 #site-info a {
-	color: #000;
+	color: #666;
 	text-decoration: none;
 }
+#site-info a:hover,
+#site-generator a:hover{
+	text-decoration: underline;
+}
 #site-generator {
-	font-style: italic;
 	position: relative;
+	top: 5px;
 }
 #site-generator a {
 	background: url(images/wordpress.png) center left no-repeat;
@@ -1289,8 +1471,19 @@ h3#reply-title {
 	padding-left: 20px;
 	text-decoration: none;
 }
-#site-generator a:hover {
-	text-decoration: underline;
+#host-service {
+	float: left;
+	background: url(images/mt.gif) left top no-repeat;
+	display: block;
+	margin-top: -1px;
+	margin-left: 30px;
+	margin-right: 20px;
+	text-indent: -9999px;
+	width: 60px;
+	height: 30px;
+}
+#copyright-info {
+	padding-top: 5px;
 }
 img#wpstats {
 	display: block;

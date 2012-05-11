@@ -54,7 +54,8 @@ if ( get_the_author_meta( 'description' ) ) : ?>
 	 get_template_part( 'loop', 'author' );
 ?>
 			</div><!-- #content -->
-		</div><!-- #container -->
 
 <?php get_sidebar(); ?>
+		</div><!-- #container -->
+
 <?php get_footer(); ?>

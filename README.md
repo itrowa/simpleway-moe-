@@ -8,7 +8,7 @@ simple way ~moe~是一个基于WordPress默认主题[twentyten](http://wordpress
 
 这个主题适合那些个人Blog使用。
 
-#需要改进的地方#
+##需要改进的地方##
 
 这个主题非常不成熟，很多地方需要改进。如
 
@@ -17,6 +17,6 @@ simple way ~moe~是一个基于WordPress默认主题[twentyten](http://wordpress
 * 配色尚需优化
 * comments评论模版的css不成熟（不过大多数人考虑使用Disqus了）
 
-#版权#
+##版权##
 
 GPL协议。请随意修改并分发！

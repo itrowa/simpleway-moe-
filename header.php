@@ -18,7 +18,7 @@
 	 */
 	global $page, $paged;
 
-	wp_title( '|', true, 'right' );
+	wp_title( '&laquo;', true, 'right' );
 
 	// Add the blog name.
 	bloginfo( 'name' );
@@ -26,11 +26,11 @@
 	// Add the blog description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
 	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
+		echo " ~$site_description~";
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
+		echo ' ~' . sprintf(( '第%s页'), max( $paged, $page ) ) . '~';
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -64,7 +64,7 @@
 						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 					</span>
 				</<?php echo $heading_tag; ?>>
-				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+				<!-- <div id="site-description"><?php bloginfo( 'description' ); ?></div> -->
 
 				<?php
 					// Check if this is a post or page, if it has a thumbnail, and if it's a big one

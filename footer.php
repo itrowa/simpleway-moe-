@@ -23,16 +23,20 @@
 ?>
 
 			<div id="site-info">
-				<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php bloginfo( 'name' ); ?>
-				</a>
+					<a id="host-service" href="http://mediatemple.net/" title="网站放置于著名的MediaTemple上">(MT)</a>
+				<p id="copyright-info">					
+					<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+						<?php bloginfo( 'name' ); ?>
+					</a>
+					&copy; 2006 - 2011, <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" title="网站原创内容使用“署名-非商业性使用-相同方式共享 3.0 (CC BY-NC-SA 3.0)”协议分享。 ">Some Right Reserved</a>.
+				</p>
 			</div><!-- #site-info -->
 
 			<div id="site-generator">
 				<?php do_action( 'twentyten_credits' ); ?>
 				<a href="<?php echo esc_url( __('http://wordpress.org/', 'twentyten') ); ?>"
 						title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'twentyten'); ?>" rel="generator">
-					<?php printf( __('Proudly powered by %s.', 'twentyten'), 'WordPress' ); ?>
+					<?php echo 'Powered by WordPress.'; ?>
 				</a>
 			</div><!-- #site-generator -->
 
