@@ -1,0 +1,2 @@
+1.1
+改进了首页的列表形式，新增了blog的page Template

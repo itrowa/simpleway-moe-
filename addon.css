@@ -1,0 +1,26 @@
+/*
+ * 加入的新样式表: 主要为某些页面的样式或者内容而定
+ */
+
+/* 
+ * 在正文段落使用相应的class可以实现类似wiki的informaton display
+ */
+#content .i-info {
+	border: 1px #999 solid;
+	background: #EEE;
+}
+
+#content .i-warning {
+	border: 1px #999 solid;
+	background: #EEE;
+}
+
+#content .i-caution {
+	border: 1px #999 solid;
+	background: #EEE;
+}
+
+#content .i-info {
+	border: 1px #999 solid;
+	background: #EEE;
+}
